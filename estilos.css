@@ -1,0 +1,55 @@
+﻿body {
+  font-family: Arial, sans-serif;
+  background-image: url('fondo-madera.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background: rgba(0, 0, 0, 0.7);
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+header h1 {
+  font-size: 2rem;
+  color: #ffd700;
+}
+
+nav button, nav a.btn-reserva {
+  background-color: #ff8c00;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  margin: 0.5rem;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.seccion {
+  display: none;
+  background: rgba(0, 0, 0, 0.7);
+  margin: 1rem auto;
+  max-width: 900px;
+  border-radius: 15px;
+  padding: 1rem;
+}
+
+.seccion h2 {
+  font-size: 1.5rem;
+  color: #ffd700;
+}
+
+footer {
+  background: rgba(0, 0, 0, 0.9);
+  text-align: center;
+  font-size: 0.9rem;
+  padding: 1rem;
+  color: #ccc;
+}

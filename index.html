@@ -1,97 +1,59 @@
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>La Casa de Anel & Señor Patacón</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background: url('fondo_madera.jpg') no-repeat center center fixed;
-            background-size: cover;
-            color: #fff;
-        }
-        header, footer {
-            background: rgba(0,0,0,0.7);
-            text-align: center;
-            padding: 20px;
-        }
-        .seccion {
-            background: rgba(0,0,0,0.6);
-            margin: 20px;
-            padding: 20px;
-            border-radius: 15px;
-        }
-        h1, h2 {
-            color: #FFD700;
-        }
-        .galeria img {
-            width: 100%;
-            max-width: 200px;
-            margin: 10px;
-            border-radius: 10px;
-        }
-        .whatsapp-button, .reserva-button {
-            display: inline-block;
-            margin: 10px auto;
-            padding: 15px 25px;
-            background-color: #25D366;
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 30px;
-        }
-        .reserva-button {
-            background-color: #007bff;
-        }
-        .detalle {
-            width: 100%;
-            height: 100px;
-            background: url('detalle_santander.jpg') repeat-x;
-        }
-    </style>
+    <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
+    <header>
+        <h1>La Casa de Anel & Señor Patacón</h1>
+        <nav>
+            <button onclick="toggleSection('historia')">El Sueño que Empezó mi Mamá</button>
+            <button onclick="toggleSection('quienes')">¿Quiénes Somos?</button>
+            <button onclick="toggleSection('clasicos')">Nuestros Clásicos</button>
+            <a href="#reserva" class="btn-reserva">Reserva</a>
+        </nav>
+    </header>
 
-<header>
-    <h1>La Casa de Anel & Señor Patacón</h1>
-    <p>Auténtico sabor desde el Socorro, Santander</p>
-</header>
+    <section id="historia" class="seccion">
+        <h2>El Sueño que Empezó mi Mamá</h2>
+        <p>
+            Hace 25 años, en el Socorro (Santander), mi mamá comenzó un sueño con humildad y amor: cocinar platos caseros con sabor auténtico. Lo que empezó como un pequeño fogón familiar, hoy es un restaurante que cuenta la historia de lucha y esperanza en cada plato servido.
+        </p>
+    </section>
 
-<div class="detalle"></div>
+    <section id="quienes" class="seccion">
+        <h2>¿Quiénes Somos?</h2>
+        <p>
+            Somos una familia que cree en la cocina como un acto de amor. Cada plato está hecho con dedicación, respeto por las recetas tradicionales y pasión por el sabor auténtico. Aquí, cada cliente es parte de nuestra historia.
+        </p>
+    </section>
 
-<section class="seccion">
-    <h2>¿Quiénes somos?</h2>
-    <p>Somos un restaurante familiar construido con amor, esfuerzo y dedicación. Cada plato que servimos lleva consigo el compromiso de nuestra familia y el sabor que nace desde el corazón. Cocinamos con pasión para brindarte una experiencia inolvidable.</p>
-</section>
+    <section id="clasicos" class="seccion">
+        <h2>Nuestros Clásicos</h2>
+        <ul>
+            <li>Arroz con pollo</li>
+            <li>Bandeja paisa</li>
+            <li>Pastas, lasaña y crepes</li>
+            <li>Churrasco, costillas BBQ y milanesa de pollo</li>
+            <li>Patacón Señor Patacón, papas locas y hamburguesas</li>
+            <li>Patacón monumental y ceviche de chicharrón</li>
+        </ul>
+    </section>
 
-<section class="seccion">
-    <h2>El sueño que empezó mi mamá</h2>
-    <p>Hace 25 años, mi mamá comenzó este sueño con lo poco que tenía, pero con mucho amor. Desde una pequeña cocina en el Socorro, Santander, fue conquistando corazones a través de sus recetas. Hoy, ese legado continúa en cada plato que servimos.</p>
-</section>
+    <section id="reserva">
+        <h2>Reserva tu Mesa</h2>
+        <p>Reserva ahora vía WhatsApp:</p>
+        <a class="btn-reserva" href="https://wa.me/573102820525" target="_blank">Reservar en WhatsApp</a>
+    </section>
 
-<section class="seccion">
-    <h2>Nuestros clásicos</h2>
-    <p>Arroz con pollo, bandeja paisa, pastas, lasaña, crepes, churrasco, costillas BBQ y milanesa de pollo. La tradición que encanta a quienes nos visitan.</p>
-</section>
+    <footer>
+        <p>Socorro, Santander - Colombia</p>
+        <p>Tel: 3102820525</p>
+    </footer>
 
-<section class="seccion">
-    <h2>Lo mejor del Señor Patacón</h2>
-    <p>Disfruta nuestro famoso patacón Señor Patacón, papas locas, hamburguesa pollo champiñón, multicarnes, ceviche de chicharrón y el imponente patacón monumental.</p>
-</section>
-
-<div style="text-align:center;">
-    <a href="https://wa.me/573102820525" class="whatsapp-button">Escríbenos por WhatsApp</a>
-    <a href="https://wa.me/573102820525?text=Hola%2C%20quiero%20reservar%20una%20mesa%20por%20favor" class="reserva-button">Reservar ahora</a>
-</div>
-
-<div class="detalle"></div>
-
-<footer>
-    <p>&copy; 2025 La Casa de Anel & Señor Patacón. Todos los derechos reservados.</p>
-</footer>
-
+    <script src="menu.js"></script>
 </body>
 </html>
