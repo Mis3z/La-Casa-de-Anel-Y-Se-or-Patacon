@@ -3,57 +3,333 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>La Casa de Anel & Señor Patacón</title>
-    <link rel="stylesheet" href="estilos.css">
+    <title>La Casa de Anel / Señor Patacón</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            transition: background-color 0.5s ease, color 0.5s ease;
+            background-color: #f8f8f8; /* Fondo claro por defecto */
+            color: #333; /* Texto oscuro por defecto */
+        }
+
+        header {
+            background-color: #d62828;
+            padding: 20px;
+            text-align: center;
+            font-size: 2em;
+            font-weight: bold;
+            color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .menu-container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            display: none; /* Oculto por defecto, JS lo muestra */
+        }
+
+        .menu-category {
+            margin-bottom: 30px;
+        }
+
+        .menu-category h3 {
+            font-size: 1.8em;
+            color: #d62828;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .menu-item {
+            display: flex;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee; /* Separador */
+        }
+
+        .menu-item:last-child {
+            border-bottom: none; /* No hay separador en el último item de cada categoría */
+        }
+
+        .menu-item img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%; /* Imagen circular */
+            object-fit: cover;
+            margin-right: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .item-details {
+            flex-grow: 1;
+        }
+
+        .item-details h4 {
+            margin: 0;
+            font-size: 1.2em;
+            color: #555;
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        .item-name {
+            font-weight: bold;
+            flex-grow: 1;
+        }
+
+        .item-price {
+            font-weight: bold;
+            color: #d62828;
+            margin-left: 10px;
+        }
+
+        .item-description {
+            margin-top: 5px;
+            font-size: 0.9em;
+            color: #777;
+        }
+
+        .whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25D366;
+            color: white;
+            font-size: 16px;
+            padding: 12px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            transition: background-color 0.3s ease;
+            z-index: 1000; /* Para asegurar que esté encima de otros elementos */
+        }
+
+        .whatsapp-button:hover {
+            background-color: #1ebe57;
+        }
+
+        .galeria {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin: 30px auto;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+
+        .galeria img {
+            width: 100%;
+            max-width: 200px;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .galeria img:hover {
+            transform: scale(1.05);
+        }
+
+        iframe {
+            display: block;
+            margin: 30px auto;
+            border: none;
+            width: 90%;
+            max-width: 600px;
+            height: 300px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+        .closed-message {
+            text-align: center;
+            padding: 50px;
+            font-size: 1.8em;
+            color: #555;
+            background-color: #f0f0f0;
+            margin: 20px auto;
+            max-width: 800px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            display: none;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>La Casa de Anel & Señor Patacón</h1>
-        <nav>
-            <button onclick="toggleSection('historia')">El Sueño que Empezó mi Mamá</button>
-            <button onclick="toggleSection('quienes')">¿Quiénes Somos?</button>
-            <button onclick="toggleSection('clasicos')">Nuestros Clásicos</button>
-            <a href="#reserva" class="btn-reserva">Reserva</a>
-        </nav>
-    </header>
 
-    <section id="historia" class="seccion">
-        <h2>El Sueño que Empezó mi Mamá</h2>
-        <p>
-            Hace 25 años, en el Socorro (Santander), mi mamá comenzó un sueño con humildad y amor: cocinar platos caseros con sabor auténtico. Lo que empezó como un pequeño fogón familiar, hoy es un restaurante que cuenta la historia de lucha y esperanza en cada plato servido.
-        </p>
+<header id="header-title">
+    Restaurante
+</header>
+
+<section id="main-menu-content" class="menu-container">
     </section>
 
-    <section id="quienes" class="seccion">
-        <h2>¿Quiénes Somos?</h2>
-        <p>
-            Somos una familia que cree en la cocina como un acto de amor. Cada plato está hecho con dedicación, respeto por las recetas tradicionales y pasión por el sabor auténtico. Aquí, cada cliente es parte de nuestra historia.
-        </p>
-    </section>
+<section id="closed-section" class="closed-message" style="display: none;">
+    <h2>Cerrado por ahora</h2>
+    <p>Te esperamos en nuestros horarios de atención.</p>
+</section>
 
-    <section id="clasicos" class="seccion">
-        <h2>Nuestros Clásicos</h2>
-        <ul>
-            <li>Arroz con pollo</li>
-            <li>Bandeja paisa</li>
-            <li>Pastas, lasaña y crepes</li>
-            <li>Churrasco, costillas BBQ y milanesa de pollo</li>
-            <li>Patacón Señor Patacón, papas locas y hamburguesas</li>
-            <li>Patacón monumental y ceviche de chicharrón</li>
-        </ul>
-    </section>
+<section class="galeria">
+    <img src="galeria1.jpg" alt="Plato de galería 1">
+    <img src="galeria2.jpg" alt="Plato de galería 2">
+    <img src="galeria3.jpg" alt="Plato de galería 3">
+    <img src="galeria4.jpg" alt="Plato de galería 4">
+</section>
 
-    <section id="reserva">
-        <h2>Reserva tu Mesa</h2>
-        <p>Reserva ahora vía WhatsApp:</p>
-        <a class="btn-reserva" href="https://wa.me/573102820525" target="_blank">Reservar en WhatsApp</a>
-    </section>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d416.7051406172888!2d-73.25579224188297!3d6.472216221567758!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e69c2a3b55c2087%3A0xa3f1e155a8fd3ba!2sRestaurante%20La%20Casa%20De%20Anel.!5e0!3m2!1ses-419!2sco!4v1753049545975!5m2!1ses-419!2sco" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
-    <footer>
-        <p>Socorro, Santander - Colombia</p>
-        <p>Tel: 3102820525</p>
-    </footer>
+<a href="https://wa.me/573102820525" class="whatsapp-button" target="_blank">
+    💬 Escríbenos por WhatsApp
+</a>
 
-    <script src="menu.js"></script>
+<script>
+    // Define los menús para cada restaurante
+    const menuAnel = [
+        {
+            category: "Tradicionales",
+            items: [
+                { img: "almuerzo_corriente.jpg", name: "Almuerzo Corriente", description: "Sopa, plato fuerte y bebida del día.", price: "$15.000" },
+                { img: "bandeja_paisa.jpg", name: "Bandeja Paisa", description: "Frijoles, arroz, carne molida, chicharrón, huevo frito, tajada de plátano, arepa y aguacate.", price: "$28.000" },
+                { img: "sancocho.jpg", name: "Sancocho de Gallina", description: "Delicioso sancocho con presa de gallina, papa, yuca, plátano y mazorca.", price: "$22.000" }
+            ]
+        },
+        {
+            category: "Especiales del Chef",
+            items: [
+                { img: "salmon_teriyaki.jpg", name: "Salmón Teriyaki", description: "Salmón a la plancha con salsa teriyaki y vegetales salteados.", price: "$35.000" },
+                { img: "lomo_saltado.jpg", name: "Lomo Saltado", description: "Trozos de lomo de res salteados con cebolla, tomate, papas a la francesa y arroz.", price: "$32.000" }
+            ]
+        }
+        // Agrega más categorías y platos para "La Casa de Anel" aquí
+    ];
+
+    const menuPatacon = [
+        {
+            category: "Hamburguesas de Res",
+            items: [
+                { img: "hamburguesa_clasica.jpg", name: "Hamburguesa Clásica", description: "Carne de res 150g, lechuga, tomate, cebolla, queso y salsa especial.", price: "$18.000" },
+                { img: "hamburguesa_doble.jpg", name: "Doble Carne", description: "Dos carnes de res 150g c/u, doble queso, tocineta, vegetales y salsas.", price: "$25.000" },
+                { img: "hamburguesa_bbq.jpg", name: "Hamburguesa BBQ", description: "Carne de res 150g, aros de cebolla, queso cheddar y salsa BBQ.", price: "$20.000" }
+            ]
+        },
+        {
+            category: "Hamburguesas de Pollo",
+            items: [
+                { img: "hamburguesa_pollo.jpg", name: "Hamburguesa de Pollo", description: "Pechuga de pollo a la plancha, lechuga, tomate, cebolla caramelizada y salsa tártara.", price: "$17.000" }
+            ]
+        },
+        {
+            category: "Perros Calientes",
+            items: [
+                { img: "perro_especial.jpg", name: "Perro Especial", description: "Salchicha americana, pan artesanal, queso, tocineta, papitas y salsas.", price: "$14.000" },
+                { img: "perro_mexicano.jpg", name: "Perro Mexicano", description: "Salchicha, pan, pico de gallo, guacamole, jalapeños y sour cream.", price: "$16.000" }
+            ]
+        },
+        {
+            category: "Patacones",
+            items: [
+                { img: "patacon_mixto.jpg", name: "Patacón Mixto", description: "Patacón grande con carne desmechada, pollo desmechado, queso y suero costeño.", price: "$20.000" },
+                { img: "patacon_solo_carne.jpg", name: "Patacón de Carne", description: "Patacón grande con carne desmechada, queso y suero costeño.", price: "$18.000" }
+            ]
+        },
+        {
+            category: "Adiciones",
+            items: [
+                { img: "papas_francesa.jpg", name: "Papas a la Francesa", description: "Porción de papas a la francesa.", price: "$6.000" },
+                { img: "aros_cebolla.jpg", name: "Aros de Cebolla", description: "Porción de aros de cebolla apanados.", price: "$8.000" }
+            ]
+        },
+        {
+            category: "Bebidas",
+            items: [
+                { img: "gaseosa.jpg", name: "Gaseosa", description: "Variedad de gaseosas 350ml.", price: "$4.000" },
+                { img: "jugo_natural.jpg", name: "Jugo Natural", description: "Jugo en agua o leche (maracuyá, lulo, mora).", price: "$7.000" }
+            ]
+        }
+        // Agrega más categorías y platos para "Señor Patacón" aquí
+    ];
+
+    function renderMenu(menuData) {
+        const menuContainer = document.getElementById('main-menu-content');
+        menuContainer.innerHTML = ''; // Limpiar contenido anterior
+
+        menuData.forEach(category => {
+            const categoryDiv = document.createElement('div');
+            categoryDiv.classList.add('menu-category');
+
+            const categoryTitle = document.createElement('h3');
+            categoryTitle.textContent = category.category;
+            categoryDiv.appendChild(categoryTitle);
+
+            category.items.forEach(item => {
+                const itemDiv = document.createElement('div');
+                itemDiv.classList.add('menu-item');
+
+                const img = document.createElement('img');
+                img.src = item.img;
+                img.alt = item.name;
+                itemDiv.appendChild(img);
+
+                const detailsDiv = document.createElement('div');
+                detailsDiv.classList.add('item-details');
+
+                const namePriceDiv = document.createElement('h4');
+                const itemName = document.createElement('span');
+                itemName.classList.add('item-name');
+                itemName.textContent = item.name;
+                namePriceDiv.appendChild(itemName);
+
+                const itemPrice = document.createElement('span');
+                itemPrice.classList.add('item-price');
+                itemPrice.textContent = item.price;
+                namePriceDiv.appendChild(itemPrice);
+
+                detailsDiv.appendChild(namePriceDiv);
+
+                const itemDescription = document.createElement('p');
+                itemDescription.classList.add('item-description');
+                itemDescription.textContent = item.description;
+                detailsDiv.appendChild(itemDescription);
+
+                itemDiv.appendChild(detailsDiv);
+                categoryDiv.appendChild(itemDiv);
+            });
+            menuContainer.appendChild(categoryDiv);
+        });
+        menuContainer.style.display = 'block'; // Mostrar el contenedor del menú
+    }
+
+    const hora = new Date().getHours();
+    const headerTitle = document.getElementById('header-title');
+    const mainMenuContent = document.getElementById('main-menu-content');
+    const closedSection = document.getElementById('closed-section');
+
+    if (hora >= 12 && hora < 14) { // 12 PM a 1:59 PM (hasta las 2 PM)
+        document.body.style.backgroundColor = "#f8f8f8";
+        document.body.style.color = "#333";
+        headerTitle.textContent = "La Casa de Anel";
+        renderMenu(menuAnel);
+    } else if (hora >= 18 && hora < 22) { // 6 PM a 9:59 PM (hasta las 10 PM)
+        // Puedes cambiar los colores para el menú de noche si lo deseas, por ejemplo:
+        // document.body.style.backgroundColor = "#1a1a1a";
+        // document.body.style.color = "#f5f5f5";
+        headerTitle.textContent = "Señor Patacón";
+        renderMenu(menuPatacon);
+    } else {
+        document.body.style.backgroundColor = "#f0f0f0"; // Fondo claro para cerrado
+        document.body.style.color = "#555"; // Texto oscuro
+        headerTitle.textContent = "Cerrado por ahora";
+        mainMenuContent.style.display = 'none'; // Asegúrate de ocultar el menú si está cerrado
+        closedSection.style.display = 'block';
+    }
+</script>
+
 </body>
 </html>
