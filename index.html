@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Casa de Anel / Señor Patacón</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            transition: background-color 0.5s ease, color 0.5s ease;
+        }
+
+        header {
+            background-color: #d62828;
+            padding: 20px;
+            text-align: center;
+            font-size: 2em;
+            font-weight: bold;
+            color: white;
+        }
+
+        .menu {
+            display: none;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .menu img {
+            width: 90%;
+            max-width: 500px;
+            border-radius: 10px;
+            margin: 20px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .menu img:hover {
+            transform: scale(1.05);
+        }
+
+        .menu h2 {
+            color: #f4a261;
+            font-size: 1.5em;
+        }
+
+        .whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25D366;
+            color: white;
+            font-size: 16px;
+            padding: 12px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        .whatsapp-button:hover {
+            background-color: #1ebe57;
+        }
+
+        .galeria {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px;
+        }
+
+        .galeria img {
+            width: 100%;
+            max-width: 200px;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .galeria img:hover {
+            transform: scale(1.1);
+        }
+
+        iframe {
+            display: block;
+            margin: 30px auto;
+            border: none;
+            width: 90%;
+            max-width: 600px;
+            height: 300px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<header id="header-title">
+    Restaurante
+</header>
+
+<section id="menu-anel" class="menu">
+    <h2>La Casa de Anel</h2>
+    <img src="almuerzo.jpg" alt="Almuerzo">
+    <p>Ofrecemos almuerzos caseros de 12:00 p.m. a 2:00 p.m. ¡Disfruta nuestra sazón!</p>
+</section>
+
+<section id="menu-patacon" class="menu">
+    <h2>Señor Patacón</h2>
+    <img src="patacon.jpg" alt="Comidas rápidas">
+    <p>De 6:00 p.m. a 9:30 p.m. disfruta hamburguesas, patacones y más delicias callejeras.</p>
+</section>
+
+<section class="galeria">
+    <img src="galeria1.jpg" alt="Plato 1">
+    <img src="galeria2.jpg" alt="Plato 2">
+    <img src="galeria3.jpg" alt="Plato 3">
+    <img src="galeria4.jpg" alt="Plato 4">
+</section>
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d247.77443074630838!2d-73.25586446485102!3d6.472070056196008!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e69c2a3b55c2087%3A0xa3f1e155a8fd3ba!2sRestaurante%20La%20Casa%20De%20Anel.!5e0!3m2!1ses-419!2sco!4v1753046477014!5m2!1ses-419!2sco" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+<a href="https://wa.me/573102820525" class="whatsapp-button" target="_blank">
+    💬 Escríbenos por WhatsApp
+</a>
+
+<script>
+    const hora = new Date().getHours();
+    const headerTitle = document.getElementById('header-title');
+    const menuAnel = document.getElementById('menu-anel');
+    const menuPatacon = document.getElementById('menu-patacon');
+
+    if (hora >= 12 && hora <= 14) {
+        document.body.style.backgroundColor = "#f4f4f4";
+        document.body.style.color = "#000";
+        headerTitle.textContent = "La Casa de Anel";
+        menuAnel.style.display = 'block';
+    } else if (hora >= 18 && hora <= 22) {
+        document.body.style.backgroundColor = "#121212";
+        document.body.style.color = "#fff";
+        headerTitle.textContent = "Señor Patacón";
+        menuPatacon.style.display = 'block';
+    } else {
+        document.body.style.backgroundColor = "#000";
+        document.body.style.color = "#fff";
+        headerTitle.textContent = "Cerrado por ahora";
+    }
+</script>
+
+</body>
+</html>
